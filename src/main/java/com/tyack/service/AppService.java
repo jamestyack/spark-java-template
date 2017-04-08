@@ -1,5 +1,6 @@
 package com.tyack.service;
 
+import com.tyack.model.SampleData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,5 +25,13 @@ public class AppService {
         Map<String, String> result = new HashMap<>();
         result.put("message", "hello " + name);
         return result;
+    }
+
+    public SampleData getSampleData(String id) {
+        SampleData sd = new SampleData();
+        sd.setId(id);
+        sd.setName("someName");
+        sd.setYear(9999);
+        return sd;
     }
 }

@@ -30,7 +30,7 @@ public class AppResource extends CommonResource {
     private void setupEndpoints() {
 
         /**
-         * Sample endpoint GET /api/v1/bikesystems
+         * Sample endpoint GET /api/v1/greeting
          */
         get(API_CONTEXT + "/greeting", (request, response) -> {
             response.type("application/json");
@@ -38,11 +38,19 @@ public class AppResource extends CommonResource {
         }, new JsonTransformer());
 
         /**
-         * Get a bike system e.g. /api/v1/bikesystem/babs
+         * Sample endpoint GET /api/v1/greeting/:name
          */
         get(API_CONTEXT + "/greeting/:name", (request, response) -> {
             response.type("application/json");
             return appService.sayHello(request.params("name"));
+        }, new JsonTransformer());
+
+        /**
+         * Sample endpoint GET /api/v1/sampledata
+         */
+        get(API_CONTEXT + "/sampledata", (request, response) -> {
+            response.type("application/json");
+            return appService.getSampleData("blah");
         }, new JsonTransformer());
 
 
