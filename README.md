@@ -1,7 +1,7 @@
 Spark Java Starter Template with Dockerfile
 -------------------------------------------
 
-This builds image that runs maven adn builds fat JAR; includes command for starting app. Image is lightweight (jdk-8-onbuild-alpine)
+This builds image that uses maven to run tests/build fat JAR; includes command for starting app. Image is lightweight (jdk-8-onbuild-alpine)
 
 ```docker build -t spark-java-template:0.1 .```
 
